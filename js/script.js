@@ -50,7 +50,7 @@ const showIngredients = meal => {
                 <li>5</li>
             </ul>
         `;
-        ingredientDiv.appendChild(ingredientInfo);
+    ingredientDiv.appendChild(ingredientInfo);
 }
 
 fetchIngredientsData();
