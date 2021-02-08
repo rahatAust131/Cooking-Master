@@ -10,7 +10,8 @@ searchBtn.addEventListener('click', () => {
     document.getElementById('meal-container').innerHTML = '';
     // Clear the previous Ingredients Info
     document.getElementById('ingredient-container').innerHTML = '';
-    
+    // Clear the previous Alert Info
+    document.getElementById('alert-section').innerHTML = '';
 });
 
 // A function to fetch Meals Data from API
@@ -23,13 +24,28 @@ function fetchMealsData() {
 
 // A function to show Meals Data from API
 const showMealsData = meals => {
-    if(meals == null) {
-        alert(`
-        Sorry!
-        No Meal Found For  ${input.value} :(
-        Please Try Again With Another Valid Meal Name.
-        Thank You`);
-        
+    if (meals == null) {
+        // Alert Section Dynamic Div
+        const alertDiv = document.getElementById('alert-section');
+        const alertTextDiv = document.createElement('div');
+        alertTextDiv.innerHTML = `
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <p><strong>Sorry!!</strong></p>
+        <p>You Searched For <span id="input-span"> ${input.value} </span></p>
+        <p>No Meal Found in This Name </p>
+        <p>Please Try Again With Another Valid Meal Name.</p>
+        <p>Thank You</p>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        `;
+        alertDiv.appendChild(alertTextDiv);        
     } else {
         // for getting each meal item, iterating through the meals
         meals.forEach(mealItem => {
@@ -45,7 +61,7 @@ const showMealsData = meals => {
                 </div>
             `;
             mealInfoDiv.innerHTML = mealInfo;
-            mealContainer.appendChild(mealInfoDiv);        
+            mealContainer.appendChild(mealInfoDiv);
             // Calling the fetchData function to get the selected Meal Ingredients 
             mealInfoDiv.onclick = () => {
                 fetchIngredientsData(mealItem.strMeal);
@@ -53,9 +69,9 @@ const showMealsData = meals => {
                 document.getElementById('ingredient-container').innerHTML = '';
             };
         })
-    } 
+    }
     // Clear the previous searched text
-    input.value = ''; 
+    input.value = '';
 }
 
 // A function to fetch Meals' Ingredients Data from API

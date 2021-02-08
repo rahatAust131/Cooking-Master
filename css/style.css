@@ -14,7 +14,6 @@ body {
 
 /* Ingredient Div */
 #ingredient-container {
-    background-color: rgb(97 151 136);
     display: flex;
     align-items: center;
     justify-content: center;    
@@ -23,11 +22,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
-    background-color: rgb(153, 196, 196);
+    background-color: rgb(196, 214, 214);
 }
 #ingredient-img {
-    width: 50%;
+    width: 100%;
     border-radius: 5px;
 }
 .ingredients-bottom {
@@ -86,7 +84,7 @@ body {
     margin-bottom: 30px;
 }
 #meal-container img{
-    width: 55%;
+    width: 70%;
     padding: 5px;
     border-radius: 5px;
 }
@@ -94,6 +92,12 @@ body {
     background-color: rgba(231, 231, 231, 0.904);
     border-radius: 10px;
     box-shadow: 5px 5px 10px rebeccapurple;
+}
+
+/* Alert Section */
+#alert-section {
+    text-align: center;
+    font-size: 25px;
 }
 
 /* Single Elements */
@@ -112,4 +116,7 @@ body {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 20px;
     border-radius: 5px;
+}
+#input-span {
+    color: tomato;
 }
