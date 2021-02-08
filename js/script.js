@@ -4,14 +4,21 @@ const input = document.getElementById("search-input");
 // Search-Button interaction
 const searchBtn = document.getElementById('search-btn');
 searchBtn.addEventListener('click', () => {
+    // Calling the fetchMealsData function
     fetchMealsData();
+    
+    // Clear the previous searched text
+    input.value = '';
+
+    // Clear the previous Meals Info
+    document.getElementById('meal-container').innerHTML = '';
 });
 
 // A function to fetch Meals Data from API
 function fetchMealsData() {
-    console.log(input.value);
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input.value}`)
         .then(res => res.json())
+        // Calling the showMealsData function
         .then(data => showMealsData(data.meals));
 };
 
@@ -23,33 +30,44 @@ const showMealsData = meals => {
         const mealInfoDiv = document.createElement('div');
         mealInfoDiv.className = 'meal-info';
         const mealInfo = `
-            <img src= ${mealItem.strMealThumb} />
-            <h1>${mealItem.strMeal}</h1>
+            <div>
+                <img src= ${mealItem.strMealThumb} />
+            </div>
+            <div>
+                <h1 id="meal-name" >${mealItem.strMeal}</h1>
+            </div>
         `;
         mealInfoDiv.innerHTML = mealInfo;
         mealContainer.appendChild(mealInfoDiv);
-        // call the fetchData function to get the ingredients of selected meal 
+        // Calling the fetchData function to get the selected Meal Ingredients 
         mealInfoDiv.onclick = () => {
             fetchIngredientsData(mealItem.strMeal);
+
+            // Clear the previous Meals' Ingredients Info 
+            document.getElementById('ingredient-container').innerHTML = '';
         };
-    })
+    })    
 }
 
 // A function to fetch Meals' Ingredients Data from API
 const fetchIngredientsData = particularMeal => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${particularMeal}`)
         .then(res => res.json())
+        // Calling the showData function to show Ingredients Info
         .then(data => showIngredientsData(data.meals[0]));
 }
 
 // A function to show Meals' Ingredients Data from API
 const showIngredientsData = mealInfo => {
+    // targeting static div
     const ingredientsDiv = document.getElementById('ingredient-container');
+
+    // dynamic html
     const ingredientsInfo = `
-    <div class="ingredients ingredients-top">
+    <div class="ingredients-top">
         <img id="ingredient-img" src= ${mealInfo.strMealThumb} alt="" />
     </div>
-    <div class="ingredients ingredients-bottom">
+    <div class="ingredients-bottom">
         <h1 class="heading h1">${mealInfo.strMeal}</h1>
         <h3 class="heading h2">Ingredients</h3>
         <ul id="ingredients-list">
@@ -62,7 +80,13 @@ const showIngredientsData = mealInfo => {
             <li class="list-item"><i class="fas fa-check-square"></i> ${mealInfo.strIngredient7}</li>
         </ul>            
     </div>`;
+
+    // creating dynamic div
     const ingredientsInfoDiv = document.createElement('div');
+
+    // assigning html to div
     ingredientsInfoDiv.innerHTML = ingredientsInfo;
+
+    // appending dynamic div to static div
     ingredientsDiv.appendChild(ingredientsInfoDiv);
 }

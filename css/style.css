@@ -7,7 +7,7 @@
 
 /* For The Whole Body/document */
 body {
-    background-color: dimgray;
+    background-color: rgba(255, 192, 104, 0.966);
 }
 
 /* Ingredient Div */
@@ -17,22 +17,20 @@ body {
     align-items: center;
     justify-content: center;    
 }
-.ingredients {
-    border-radius: 5px;
-    width: 100%;    
-}
 .ingredients-top {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(247, 241, 188, 0.527);
+    padding: 15px;
+    background-color: rgb(153, 196, 196);
 }
 #ingredient-img {
     width: 50%;
+    border-radius: 5px;
 }
 .ingredients-bottom {
-    background-color: rgba(240, 255, 240, 0.95);
-    padding: 15px;
+    background-color: rgba(237, 255, 237, 0.95);
+    padding: 20px 5px 20px 35px;
 }
 .list-item {
     color: rgb(0, 0, 47);
@@ -83,13 +81,15 @@ body {
     grid-template-columns: repeat(3, 3fr);
     grid-gap: 35px;
     text-align: center;
-    margin: 5px;
+    margin-bottom: 30px;
 }
 #meal-container img{
-    width: 75%;
+    width: 55%;
+    padding: 5px;
+    border-radius: 5px;
 }
 .meal-info {
-    background-color: rgba(245, 245, 245, 0.774);
+    background-color: rgba(231, 231, 231, 0.904);
     border-radius: 10px;
 }
 
@@ -104,4 +104,9 @@ body {
 .h2 {
     color: rgb(255 161 35);
     font-size: 26px;
+}
+#meal-name {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 5px;
 }
