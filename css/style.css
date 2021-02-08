@@ -9,6 +9,7 @@
 /* For The Whole Body/document */
 body {
     background-color: rgb(206, 194, 172);
+    margin: 1% 5%;
 }
 
 /* Ingredient Div */
@@ -22,7 +23,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 5px;
     background-color: rgb(153, 196, 196);
 }
 #ingredient-img {
