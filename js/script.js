@@ -8,6 +8,8 @@ searchBtn.addEventListener('click', () => {
     fetchMealsData();
     // Clear the previous Meals Info
     document.getElementById('meal-container').innerHTML = '';
+    // Clear the previous Ingredients Info
+    document.getElementById('ingredient-container').innerHTML = '';
     
 });
 
@@ -24,7 +26,7 @@ const showMealsData = meals => {
     if(meals == null) {
         alert(`
         Sorry!
-        No Meal Found For : ${input.value} :(
+        No Meal Found For  ${input.value} :(
         Please Try Again With Another Valid Meal Name.
         Thank You`);
         
