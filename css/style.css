@@ -1,25 +1,45 @@
+/* For All Elements or Attributes */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* For The Whole Body/document */
 body {
     background-color: dimgray;
 }
-#meal-container {
-    display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    grid-gap: 35px;
-    text-align: center;
-    margin: 5px;
+
+/* Ingredient Div */
+#ingredient-container {
+    background-image: linear-gradient(45deg,greenyellow,blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;    
 }
-#meal-container img{
-    width: 75%;
+.ingredients {
+    border-radius: 5px;
+    width: 100%;    
 }
-.meal-info {
-    background-color: rgba(245, 245, 245, 0.774);
-    border-radius: 10px;
+.ingredients-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(247, 241, 188, 0.527);
 }
+#ingredient-img {
+    width: 50%;
+}
+.ingredients-bottom {
+    background-color: rgba(240, 255, 240, 0.95);
+    padding: 15px;
+}
+.list-item {
+    color: rgb(0, 0, 47);
+    list-style: none;
+}
+
+/* Search Div */
 .search-div {
     width: 100%;
     height: 15vh;
@@ -39,7 +59,8 @@ body {
 }
 #search-input {
     width: 45%;    
-    border-radius: 5px;    
+    border-radius: 5px;
+    padding-left: 25px;
 }
 #search-input:focus {
     border: 5px solid cyan;
@@ -54,4 +75,33 @@ body {
 }
 #search-btn:hover {
     background-image: linear-gradient(45deg, black,blue);
+}
+
+/* Meals Div */
+#meal-container {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    grid-gap: 35px;
+    text-align: center;
+    margin: 5px;
+}
+#meal-container img{
+    width: 75%;
+}
+.meal-info {
+    background-color: rgba(245, 245, 245, 0.774);
+    border-radius: 10px;
+}
+
+/* Single Elements */
+.heading {
+    margin: 10px 0;
+}
+.h1 {
+    font-size: 32px;
+    color: lightcoral;
+}
+.h2 {
+    color: rgb(255 161 35);
+    font-size: 26px;
 }
