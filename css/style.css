@@ -7,12 +7,12 @@
 
 /* For The Whole Body/document */
 body {
-    background-color: rgba(255, 192, 104, 0.966);
+    background-color: rgb(206, 194, 172);
 }
 
 /* Ingredient Div */
 #ingredient-container {
-    background-image: linear-gradient(45deg,greenyellow,blue);
+    background-color: rgb(97 151 136);
     display: flex;
     align-items: center;
     justify-content: center;    
@@ -91,6 +91,7 @@ body {
 .meal-info {
     background-color: rgba(231, 231, 231, 0.904);
     border-radius: 10px;
+    box-shadow: 5px 5px 10px rebeccapurple;
 }
 
 /* Single Elements */
