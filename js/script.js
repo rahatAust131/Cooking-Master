@@ -57,7 +57,7 @@ const showMealsData = meals => {
                     <img src= ${mealItem.strMealThumb} />
                 </div>
                 <div>
-                    <h1 id="meal-name" >${mealItem.strMeal}</h1>
+                    <h4 id="meal-name" >${mealItem.strMeal}</h4>
                 </div>
             `;
             mealInfoDiv.innerHTML = mealInfo;
@@ -88,10 +88,11 @@ const showIngredientsData = mealInfo => {
     const ingredientsDiv = document.getElementById('ingredient-container');
     // dynamic html
     const ingredientsInfo = `
-    <div class="ingredients-top">
+    <div class="d-flex align-items-center justify-content-evenly">
+    <div class="ingredients-left">
         <img id="ingredient-img" src= ${mealInfo.strMealThumb} alt="" />
     </div>
-    <div class="ingredients-bottom">
+    <div class="ingredients-right">
         <h1 class="heading h1">${mealInfo.strMeal}</h1>
         <h3 class="heading h2">Ingredients</h3>
         <ul id="ingredients-list">
@@ -103,6 +104,7 @@ const showIngredientsData = mealInfo => {
             <li class="list-item"><i class="fas fa-check-square"></i> ${mealInfo.strIngredient6}</li>
             <li class="list-item"><i class="fas fa-check-square"></i> ${mealInfo.strIngredient7}</li>
         </ul>            
+    </div>
     </div>`;
     // creating dynamic div
     const ingredientsInfoDiv = document.createElement('div');
